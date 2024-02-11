@@ -1,0 +1,87 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toggle-wrap{
+  padding: 100px;
+  border-radius: 10px;
+  background-color: rgb(60, 103, 255);
+}
+.circle-con{
+  display: grid;
+  grid-template-columns: 50px 50px 50px;
+  grid-template-rows: 50px;
+  gap: 10px;
+}
+.wrap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrap > div{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.circle-1{
+  transition: .3s linear;
+}
+.circle-2{
+  transition: .3s linear;
+}
+.circle-3{
+  transition: .3s linear;
+}
+#check:checked ~ label > .circle-con > .wrap > .circle-1{
+  width: 12px;
+
+  animation: left 0.3s linear;
+  position: absolute;
+  margin-right: -120px;
+
+  transform: rotate(42deg);
+  background-color: rgb(60, 103, 255);
+  border-radius: 50px;
+
+  z-index: 1;
+}
+#check:checked ~ label > .circle-con > .wrap > .circle-2{
+  width: 100px;
+  height: 100px;
+  transition-delay: 0.2s;
+  position: absolute;
+
+  animation: shadow 0.3s linear 0.2s;
+}
+@keyframes shadow {
+  0%{
+    box-shadow: 0;
+  }
+  50%{
+    box-shadow: 0 0 0 20px #fff;
+  }
+}
+#check:checked ~ label > .circle-con > .wrap > .circle-3{
+  width: 12px;
+
+  animation: left 0.3s linear;
+  position: absolute;
+  margin-left: -120px;
+
+  transform: rotate(-42deg);
+  background-color: rgb(60, 103, 255);
+  border-radius: 50px;
+
+  z-index: 1;
+}
+#check{display: none;}
